@@ -1,7 +1,17 @@
 #nyeh
 def set_board(board, choice):
-	return False
+	print(get_pos(choice))
+	return True
 
+
+def get_pos(choice):
+	# Convert to a number between 0 to 8. This gives a ternary number
+	choice-=1
+	# Get and flip first index
+	a = 2 - choice//3
+	# Get second index
+	b = choice%3
+	return (a,b)
 
 def main():
 	board = [[0,0,0],[0,0,0],[0,0,0]]
