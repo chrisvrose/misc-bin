@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 #nyeh
 
 
@@ -5,10 +7,12 @@
 
 
 # set board
-def set_board(board, choice):
+def set_board(board, choice , turn):
 	position = get_pos(choice)
 	print("Checking "+str(position))
-	if board[position[0]][position[1]] == 0 :
+	if board[ position[0] ][ position[1] ] == 0 :
+		# Set the board to turn
+		board[ position[0] ][ position[1] ] = turn
 		return True
 	else:
 		return False
@@ -16,7 +20,11 @@ def set_board(board, choice):
 
 
 def print_board(board):
-	print("boo")
+	print("\n")
+	for i in board:
+		print( stringify_turn(i[0]) ," ", stringify_turn(i[1]) ," ", stringify_turn(i[2]) )
+
+	print("\n")
 
 
 def get_pos(choice):
@@ -28,6 +36,12 @@ def get_pos(choice):
 	b = choice%3
 	return (a,b)
 
+
+
+def stringify_turn(turn):
+	return " " if turn==0 else ("O" if turn==1 else "X")
+	#return "O" if turn==1 else "X"
+
 def main():
 	# Init the precious board
 	board = [[0,0,0],[0,0,0],[0,0,0]]
@@ -38,7 +52,7 @@ def main():
 
 	while True:
 		# Print current board
-		print_board()
+		print_board(board)
 
 		choice = int(input("1-9 for input as per numpad, 0 for exit:"))
 		# Check if input in the numpad range or u mad
@@ -47,15 +61,17 @@ def main():
 			if choice == 0:
 				break
 			#Check if input was valid
-			elif set_board(board,choice):
-				print("Valid move, turn "+str(turn))
+			elif set_board(board , choice , turn):
+				print("Valid move, turn "+stringify_turn(turn))
 				turn = 2 if turn == 1 else 1
 			#
 			else:
-				print("There's already something there man")
+				print("There's already something there man, turn "+stringify_turn(turn))
 		else:
-			print("Invalid input")
-	print("hi")
+			print("Invalid input, turn"+ stringify_turn(turn))
+
+
+	print("That's over.")
 
 
 main()
