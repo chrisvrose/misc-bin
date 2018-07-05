@@ -1,7 +1,19 @@
 #nyeh
+
+
+# set board
 def set_board(board, choice):
-	print(get_pos(choice))
-	return True
+	position = get_pos(choice)
+	print("Checking "+str(position))
+	if board[position[0]][position[1]] == 0 :
+		return True
+	else:
+		return False
+
+
+
+def print_board(board):
+	print("boo")
 
 
 def get_pos(choice):
@@ -15,6 +27,7 @@ def get_pos(choice):
 
 def main():
 	board = [[0,0,0],[0,0,0],[0,0,0]]
+	turn = 1
 	while True:
 		choice = int(input("1-9 for input as per numpad, 0 for exit:"))
 		# Check if input in the numpad range or u mad
@@ -24,7 +37,8 @@ def main():
 				break
 			#Check if input was valid
 			elif set_board(board,choice):
-				print("stuff")
+				print("Valid move, turn "+str(turn))
+				turn = 2 if turn == 1 else 1
 			#
 			else:
 				print("There's already something there man")
