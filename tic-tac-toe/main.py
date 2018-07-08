@@ -48,10 +48,12 @@ def check_status(board, turn,win_status):
 			sums[2][0] = board[0][0] + 3*board[1][1] + 9*board[2][2]
 			sums[2][1] = board[2][0] + 3*board[1][1] + 9*board[0][2]
 	sums_collapsed = []
+
+	# Write into single list
 	list.extend(sums_collapsed,sums[0])
 	list.extend(sums_collapsed,sums[1])
 	list.extend(sums_collapsed,sums[2])
-	print(sums_collapsed)
+	#print(sums_collapsed)
 	if 13 in sums_collapsed:
 		win_status[0] = 1
 		return False
@@ -86,34 +88,36 @@ def main():
 	choice_p1 = input("Player 1 - O or X?").upper()
 	turn = 1 if choice_p1=="O" else 2
 
-	#Holds the status of the game
+	# Holds the status of the game, list so that it is mutable
 	win_status = [0]
 
 	# Stays true during gameplay anyways so using that
 	while True:
-		
+		# Clear screen
 		print('\033[H\033[J')
 		# Print current board
 		print_board(board)
 		if check_status(board, turn, win_status):
-			choice = int(input("1-9 for input as per numpad, 0 for exit:"))
+			choice = int(input( stringify_player(turn, intify_choice(choice_p1) ) +": 1-9 for input as per numpad, 0 for exit:"))
 			# Check if input in the numpad range or u mad
 			if choice in range(10):
 				# Exit, since user input
 				if choice == 0:
 					break
-				#Check if input was valid
+				# Check if input was valid
 				elif set_board(board , choice , turn):
-					print("Valid move, turn "+stringify_player(turn, intify_choice(choice_p1) ))
+					print("Valid move")
 					turn = 2 if turn == 1 else 1
-				#
+				# Invalid move
 				else:
-					print("There's already something there man, turn "+stringify_player(turn.choice_p1))
+					print("There's already something there man")
 			else:
-				print("Invalid input, turn"+ stringify_player(turn, intify_choice(choice_p1) ))
+				print("Invalid input, turn")
 		else:
 			break
-	print(stringify_player(win_status[0], intify_choice(choice_p1) ), win_status[0], intify_choice(choice_p1) )
+	# Result
+	print(stringify_player(win_status[0], intify_choice(choice_p1) )+" won!")
+	#print(stringify_player(win_status[0], intify_choice(choice_p1) ), win_status[0], intify_choice(choice_p1) )
 	print("That's over.")
 
 
