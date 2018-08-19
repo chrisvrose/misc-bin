@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleApp1
 {
-    class Program
+    class Program2
     {
         private int num;
-        public Program(int n)
+        public Program2(int n)
         {
             num = n;
         }
@@ -48,7 +48,7 @@ namespace ConsoleApp1
             Console.WriteLine("Output:");
             foreach(int x in a)
             {
-                Program obj = new Program(x);
+                Program2 obj = new Program2(x);
                 Console.WriteLine(obj.Addable());
             }
             #endregion
