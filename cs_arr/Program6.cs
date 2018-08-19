@@ -6,12 +6,12 @@ using System.Threading;
 
 namespace ConsoleApp1
 {
-    class Program
+    class Program6
     {
         private char separator;
         private decimal num;
 
-        public Program(decimal n)
+        public Program6(decimal n)
         {
             separator = char.Parse(Thread.CurrentThread.CurrentCulture.NumberFormat.NumberDecimalSeparator);
             num = n;
@@ -56,7 +56,7 @@ namespace ConsoleApp1
             decimal number_input;
             Console.WriteLine("Enter number");
             if (decimal.TryParse(Console.ReadLine(), out number_input)) ; else number_input = 0.0m;
-            Program obj = new Program(number_input);
+            Program6 obj = new Program6(number_input);
             Tuple<int, int> res = obj.GetParts();
             Console.WriteLine("Result 1:" + res.Item1 + "\nResult 2:" + res.Item2);
 
