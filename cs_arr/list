@@ -1,0 +1,39 @@
+Q1)WAP to  convert each element of an array in binary and store the result in string type array.
+Q2)WAP to replace each  element of an array by adding 1 in each digit of Number.
+For Example ->int []arr={12,45,897,560} then new array will be {23,56,908,671} .
+Q3)WAP to replace each digit of a number inside an array by next prime number.If No Next Prime then replace by Previous Prime Number.
+
+For Example ->int []arr={123,567,895,220} then new array will be {235,775,777,332} .
+Q4)WAP to sort first half elements of an array in ascending order and second half elements of an array in descending order.
+
+For Example ->int []arr={12,897,56,45,22,45,650,432} then new array will be {12,45,56,897,650,432,45,22} .
+
+Q5)WAP to keep track of all the repeated elements together inside an array.
+For Example ->int []arr={1,2,3,2,2,3,1,5,99,88,99,88,9,3,1,2,9} then new 
+array will be {1,1,1,2,2,2,2,3,3,3,5,99,99,88,88,9,9} .
+
+Q6)WAP to input a decimal number find the sum of digits for the whole number parts and 
+Multiplication of digits for the decimal part.
+For Example-> A decimal has two parts:
+(a) Whole number part
+(b) Decimal part
+125.765 Final result is 8 (Sum of whole Number part 125) and 210 (Multiplication of digits for the decimal part  765).
+
+Q7)WAP to replace each number of an array by sum of all the numbers behind that .
+For example->int []arr={12,8,21,25,9} then 12 will be replaced by sum of the number 1 to 11 ,21 will be replaced by sum of the number 1 to 20 etc.
+
+Q8)WAP to input user name and password and must ensure username contains only alphabates 
+  and password must contains atleast one  special symbol and also ensure password length must be greater than user name and atleast 5 character.
+
+Q9)WAP to replace each  element of an array by LCM of subsequent two numbers.
+For Example->int []arr={20,25,60,80,26,70,50,21} then replace 20 by LCM of 25,60 ,replace 50 by LCM of 21 and 20  ,replace 21 by LCM of 20 and 25.
+
+Q 10)WAP to input a string and replace each character of this string by Unicode.
+For example->”abc” then “979899”
+
+
+
+
+
+
+ 
