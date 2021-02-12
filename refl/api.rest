@@ -1,0 +1,12 @@
+### GET
+GET https://ocs.kekvrose.me/
+
+###
+GET https://ocs.kekvrose.me/dksugsgd
+
+
+### DELETE
+DELETE https://ocs.kekvrose.me/
+
+###
+GET https://ocs.kekvrose.me/
